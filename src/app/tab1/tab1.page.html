@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Discover</ion-title>
+  </ion-toolbar>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+</ion-header>
+
+<ion-content>
+  <ion-segment (ionChange)="segmentChanged($event)" value="popular">
+    <ion-segment-button value="popular">
+      <ion-label>
+        Popular
+      </ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="rating">
+      <ion-label>
+        Rating
+      </ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="recent">
+      <ion-label>
+        Recent
+      </ion-label>
+    </ion-segment-button>
+  </ion-segment>
+   <div
+    class="animate__animated animate__slideInUp animate__fast"
+    *ngIf="segment === 'popular'"
+  >
+    <ion-card>
+          <img src="https://media.macphun.com/img/uploads/customer/how-to/579/15531840725c93b5489d84e9.43781620.jpg?q=85&w=1340" />
+          <ion-card-header>
+            <ion-card-title>The light of the sun</ion-card-title>
+            <ion-card-subtitle>Be love you.</ion-card-subtitle>
+          </ion-card-header>
+        </ion-card>
+  </div>
+</ion-content>

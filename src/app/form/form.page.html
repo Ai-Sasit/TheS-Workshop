@@ -1,0 +1,30 @@
+<ion-content mode="ios">
+
+  <ion-list>
+    <form [formGroup]="fg" (ngSubmit)="onSave()">
+      <ion-item lines="full" color="tertiary">
+        <ion-label position="stacked">ชื่อสินค้า
+          <ion-text color="danger" *ngIf="isInvalid('name')">
+            ข้อมูลไม่ถูกต้อง
+          </ion-text>
+        </ion-label>
+        <ion-input type="text" formControlName="name"></ion-input>
+      </ion-item>
+      <ion-item lines="full" color="tertiary">
+        <ion-label position="stacked">ราคา
+          <ion-text color="danger" *ngIf="isInvalid('price')">
+            ข้อมูลไม่ถูกต้อง
+          </ion-text>
+        </ion-label>
+        <ion-input type="number" formControlName="price"></ion-input>
+      </ion-item>
+      <ion-item lines="none" color="tertiary">
+        <ion-label position="stacked">รายละเอียด</ion-label>
+        <ion-textarea type="text" formControlName="description"></ion-textarea>
+      </ion-item>
+      <ion-button color="success" class="ion-no-margin" expand="full" type="submit">สร้างสินค้า
+      </ion-button>
+    </form>
+  </ion-list>
+
+</ion-content>
